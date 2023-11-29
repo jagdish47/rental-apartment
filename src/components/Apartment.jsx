@@ -99,6 +99,11 @@ const Apartment = () => {
           </div>
         </div>
       </div>
+      <div className="mt-44 flex items-center justify-center">
+        <button className="bg-[#B1872F] py-2 px-6 rounded-lg text-white ">
+          View more
+        </button>
+      </div>
     </>
   );
 };
