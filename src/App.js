@@ -1,17 +1,19 @@
+import Login from "./pages/Login";
+import Home from "./components/Home";
 import Header from "./components/Header";
-import SearchBar from "./components/SearchBar";
-import Apartment from "./components/Apartment";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Dashboard from "./pages/Dashboard";
+
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <Header />
-      <SearchBar />
-      <Apartment />
-      <Contact />
-      <Footer />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
     </div>
   );
 }
