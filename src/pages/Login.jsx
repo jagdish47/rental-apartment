@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logedIn } from "../feature/Login/loginSlice";
 
 const Login = () => {
+  const dispatch = useDispatch();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -11,6 +15,7 @@ const Login = () => {
     e.preventDefault();
 
     if (username === "admin" && password === "admin") {
+      dispatch(logedIn());
       navigate("/dashboard");
     } else {
       alert("Please! Enter Valid Credentials");
@@ -21,16 +26,6 @@ const Login = () => {
     <div className="h-[585px] flex items-center justify-center bg-white ">
       <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
-
-        <p className="mb-4 text-center text-gray-700">
-          Don't have an account?{" "}
-          <span
-            onClick={() => {}}
-            className="text-orange-500 hover:underline cursor-pointer"
-          >
-            Register
-          </span>
-        </p>
 
         <form onSubmit={handleLogin}>
           <div className="mb-4">

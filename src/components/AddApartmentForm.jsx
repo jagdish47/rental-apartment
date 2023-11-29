@@ -24,6 +24,13 @@ const AddApartmentForm = ({ isOpen }) => {
   };
 
   const handleSubmit = (e) => {
+    const { image, price1db, price2dbs, price3dbs, address } = formData;
+
+    if (!image || !price1db || !price2dbs || !price3dbs || !address) {
+      alert("Please fill all the Values");
+      return;
+    }
+
     e.preventDefault();
     dispatch(addApartment(formData));
     isOpen(false);

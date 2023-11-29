@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const isLogedIn = useSelector((state) => state.login.open);
+
   return (
     <div className="flex flex-col sm:flex-row items-center justify-between px-28 py-10">
       <div className="mb-4 sm:mb-0">
@@ -14,7 +17,7 @@ const Header = () => {
         <p className="mb-2 sm:mb-0">Help</p>
         <Link to="/login">
           <button className="bg-[#B1872F] text-white px-4 py-2 rounded-md">
-            Sign in
+            {isLogedIn ? "Sign-in" : "Sign-out"}
           </button>
         </Link>
       </div>
