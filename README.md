@@ -5,7 +5,7 @@
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/jagdish47/rental-apartment.git
    ```
 
    Replace `your-username` with your GitHub username and `your-repo` with the name of your repository.
